@@ -1,30 +1,19 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import {AppBar} from '@react-native-material/core';
+import {AppBar, IconButton} from '@react-native-material/core';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const AppHeader = () => (
   <AppBar
     color="#FF8A7A"
-    title="Scan Me"
+    title="SCAN ME"
     centerTitle={true}
     style={{height: 72, justifyContent: 'center'}}
     trailing={
-      <Icon.Button
-        name="close"
-        iconStyle={{marginRight: 1}}
-        backgroundColor="#A34639"
-        size={30}
-        borderRadius={0}
-      />
+      <IconButton variant="outline" icon={<Icon name="close" size={40} />} />
     }
     leading={
-      <Icon.Button
-        name="menu"
-        iconStyle={{marginRight: 1}}
-        backgroundColor="#A34639"
-        size={30}
-        borderRadius={0}
-      />
+      <IconButton icon={<Icon name="menu" size={40} />} variant="outline" />
     }
   />
 );

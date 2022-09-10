@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
+import {Button} from '@react-native-material/core';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import AppHeader from '../components/AppHeader';
 
 const HomeScreen = () => {
@@ -8,9 +9,9 @@ const HomeScreen = () => {
     <View style={{height: '100%'}}>
       <AppHeader />
       <View style={styles.container}>
-        <Icon.Button>Scan Qr</Icon.Button>
-        <Icon.Button>Image to Qr</Icon.Button>
-        <Icon.Button>Text to Qr</Icon.Button>
+        <Button title="Scan" style={{margin: 4}} />
+        <Button title="Read" style={{margin: 4}} />
+        <Button title="Transform" style={{margin: 4}} />
       </View>
     </View>
   );
@@ -19,11 +20,10 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
+    flex: 1,
     alignSelf: 'center',
     justifyContent: 'center',
     alignContent: 'center',
-    height: '100%',
-    width: 128,
   },
 });
 export default HomeScreen;
