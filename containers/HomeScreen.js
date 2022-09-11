@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
-import {Button} from '@react-native-material/core';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import {Button} from 'react-native-paper';
 import AppHeader from '../components/AppHeader';
 
 const HomeScreen = () => {

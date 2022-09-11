@@ -1,8 +1,8 @@
 import React from 'react';
-import ScanScreen from './containers/QrScanner';
+import Text2Qr from './containers/Text2Qr';
 
 const App = () => {
-  return <ScanScreen />;
+  return <Text2Qr />;
 };
 
 export default App;
