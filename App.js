@@ -1,6 +1,8 @@
 import React from 'react';
-import HomeScreen from './containers/HomeScreen';
+import ScanScreen from './containers/QrScanner';
 
-const App = () => <HomeScreen />;
+const App = () => {
+  return <ScanScreen />;
+};
 
 export default App;
