@@ -7,7 +7,7 @@ const AppHeader = () => (
   <Appbar.Header>
     <Appbar.BackAction onPress={() => {}} />
     <Appbar.Content color="#FF8A7A" title="Scan ME" />
-    <Appbar.Action icon={<Icon name="menu" size={40} />} />
+    <Appbar.Action icon="menu" onPress={() => {}} />
   </Appbar.Header>
 );
 

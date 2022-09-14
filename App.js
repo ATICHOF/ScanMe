@@ -1,12 +1,8 @@
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import TextRecognizer from './containers/TextRecognizer';
+import Wifi2Qr from './containers/Wifi2Qr';
+
 const App = () => {
-  return (
-    <NavigationContainer>
-      <TextRecognizer />
-    </NavigationContainer>
-  );
+  return <Wifi2Qr />;
 };
 
 export default App;
