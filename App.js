@@ -1,8 +1,8 @@
 import React from 'react';
-import Wifi2Qr from './containers/Wifi2Qr';
+import TextRegognizer from './containers/TextRecognizer';
 
 const App = () => {
-  return <Wifi2Qr />;
+  return <TextRegognizer />;
 };
 
 export default App;
