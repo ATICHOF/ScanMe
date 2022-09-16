@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 'use strict';
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -9,10 +9,21 @@ import {
   View,
 } from 'react-native';
 import {RNCamera} from 'react-native-camera';
+import {launchImageLibrary} from 'react-native-image-picker';
 import TextRecognition from 'react-native-text-recognition';
 
 const TextRegognizer = () => {
   const [camera, setcamera] = useState(null);
+  const [image, setimage] = useState(null);
+  const pickImage = useCallback(async () => {
+    launchImageLibrary({}, setimage);
+  }, []);
+  const analyse = useCallback(async () => {
+    if (image) {
+      const result = await TextRecognition.recognize(image.assets[0].uri);
+      console.log(result);
+    }
+  }, [image]);
   return (
     <View style={styles.container}>
       <RNCamera
@@ -38,25 +49,25 @@ const TextRegognizer = () => {
       <View style={{flex: 0, flexDirection: 'row', justifyContent: 'center'}}>
         <TouchableOpacity
           onPress={() => {
-            takePicture(camera);
+            pickImage();
           }}
           style={styles.capture}>
           <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
-            SNAP
+            Pick Image
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            analyse();
+          }}
+          style={styles.capture}>
+          <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+            Analyse
           </Text>
         </TouchableOpacity>
       </View>
     </View>
   );
-};
-
-const takePicture = async camera => {
-  if (camera) {
-    const options = {quality: 0.5, base64: true};
-    const data = await camera.takePictureAsync(options);
-    const result = await TextRecognition.recognize(data.uri);
-    console.log(result);
-  }
 };
 
 const styles = StyleSheet.create({
