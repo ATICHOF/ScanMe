@@ -1,6 +1,6 @@
 <!-- Title -->
 <h1 align="center">
- ScanMe : React Native App
+ ScanMe : React Native Application
 </h1>
 
 <!-- Header -->
