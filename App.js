@@ -1,8 +1,8 @@
 import React from 'react';
-import TextRegognizer from './containers/TextRecognizer';
+import MainScreen from './containers/MainScreen';
 
 const App = () => {
-  return <TextRegognizer />;
+  return <MainScreen />;
 };
 
 export default App;
