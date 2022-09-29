@@ -6,10 +6,10 @@ const AppHeader = () => (
   <Appbar.Header style={styles.header}>
     <Appbar.BackAction onPress={() => {}} />
     <Appbar.Content
-      icon={({size, color}) => (
+      icon={() => (
         <Image
-          source={require('../assets/chameleon.jpg')}
-          style={{width: size, height: size, tintColor: color}}
+          source={require('../public/logo/scan2.png')}
+          style={{width: 64, height: 64}}
         />
       )}
     />
