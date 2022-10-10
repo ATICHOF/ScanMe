@@ -1,29 +1,26 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
-import {Appbar} from 'react-native-paper';
-const AppHeader = () => (
-  <Appbar.Header style={styles.header}>
-    <Appbar.BackAction onPress={() => {}} />
-    <Appbar.Content
-      icon={() => (
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+const AppHeader = () => {
+  return (
+    <View style={styles.header}>
+      <TouchableOpacity>
         <Image
-          source={require('../public/logo/scan2.png')}
-          style={{width: 64, height: 64}}
+          source={require('../public/icons/return2.png')}
+          style={styles.logo}
         />
-      )}
-    />
-    <Appbar.Action icon="menu" onPress={() => {}} />
-  </Appbar.Header>
-);
+      </TouchableOpacity>
+    </View>
+  );
+};
 const styles = StyleSheet.create({
   header: {
     height: 64,
-    backgroundColor: '#F1F5F6',
+    backgroundColor: '#fff',
   },
   logo: {
-    width: 64,
-    height: 64,
+    width: 40,
+    height: 40,
   },
 });
 
