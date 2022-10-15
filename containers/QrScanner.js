@@ -4,7 +4,8 @@ import * as React from 'react';
 import {Component} from 'react';
 
 import {
-  AppRegistry,
+  View,
+  Image,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -13,7 +14,7 @@ import {
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
-class ScanScreen extends Component {
+class QrScanner extends Component {
   onSuccess = e => {
     Linking.openURL(e.data).catch(err =>
       console.error('An error occured', err),
@@ -22,44 +23,62 @@ class ScanScreen extends Component {
 
   render() {
     return (
-      <QRCodeScanner
-        onRead={this.onSuccess}
-        topContent={
-          <Text style={styles.centerText}>
-            Go to{' '}
-            <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on
-            your computer and scan the QR code.
-          </Text>
-        }
-        bottomContent={
-          <TouchableOpacity style={styles.buttonTouchable}>
-            <Text style={styles.buttonText}>OK. Got it!</Text>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Image
+            source={require('../public/logo/scan2.png')}
+            style={styles.logo}
+          />
+          <TouchableOpacity>
+            <Image
+              source={require('../public/icons/menu2.png')}
+              style={styles.menu}
+            />
           </TouchableOpacity>
-        }
-      />
+        </View>
+        <QRCodeScanner
+          cameraContainerStyle={styles.camera}
+          onRead={this.onSuccess}
+        />
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  centerText: {
-    flex: 1,
-    fontSize: 18,
-    padding: 32,
-    color: '#777',
+  container: {
+    display: 'flex',
+    width: '100%',
   },
-  textBold: {
-    fontWeight: '500',
-    color: '#000',
+  header: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
-  buttonText: {
-    fontSize: 21,
-    color: 'rgb(0,122,255)',
+  logo: {
+    width: 80,
+    height: 80,
+    marginTop: 4,
+    marginLeft: '40%',
   },
-  buttonTouchable: {
-    padding: 16,
+  menu: {
+    width: 40,
+    height: 40,
+    margin: 24,
+  },
+  text: {
+    marginTop: 8,
+    fontSize: 22,
+    fontFamily: 'Inter',
+    color: '#223B5D',
+    fontStyle: 'normal',
+    fontWeight: '700',
+    lineHeight: 27,
+  },
+  camera: {
+    display: 'flex',
+    width: '100%',
   },
 });
 
-AppRegistry.registerComponent('default', () => ScanScreen);
-export default ScanScreen;
+export default QrScanner;

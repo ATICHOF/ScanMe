@@ -57,7 +57,7 @@ const MainScreen = () => {
                 style={styles.img}
                 source={require('../public/menuicons/wifi2.png')}
               />
-              <Text style={styles.txt}>WIFI => QR</Text>
+              <Text style={styles.txt}>WIFI ⇄ QR</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.row2}>
@@ -66,7 +66,7 @@ const MainScreen = () => {
                 style={styles.img}
                 source={require('../public/menuicons/text3.png')}
               />
-              <Text style={styles.txt}>TEXT => QR</Text>
+              <Text style={styles.txt}>TEXT ⇄ QR</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.qr}>
               <Image
@@ -109,20 +109,6 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     margin: 24,
-  },
-  text: {
-    marginTop: 8,
-    fontSize: 22,
-    fontFamily: 'Inter',
-    color: '#223B5D',
-    fontStyle: 'normal',
-    fontWeight: '700',
-    lineHeight: 27,
-  },
-  profile: {
-    display: 'flex',
-    alignContent: 'center',
-    alignItems: 'center',
   },
   main: {
     flex: 2,
