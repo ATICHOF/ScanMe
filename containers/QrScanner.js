@@ -3,14 +3,7 @@
 import * as React from 'react';
 import {Component} from 'react';
 
-import {
-  View,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  Linking,
-} from 'react-native';
+import {View, Image, StyleSheet, TouchableOpacity, Linking} from 'react-native';
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
@@ -25,6 +18,12 @@ class QrScanner extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
+          <TouchableOpacity>
+            <Image
+              source={require('../public/icons/return2.png')}
+              style={styles.back}
+            />
+          </TouchableOpacity>
           <Image
             source={require('../public/logo/scan2.png')}
             style={styles.logo}
@@ -37,8 +36,20 @@ class QrScanner extends Component {
           </TouchableOpacity>
         </View>
         <QRCodeScanner
+          cameraProps={{ratio: '1:1'}}
+          showMarker={true}
+          customMarker={
+            <View>
+              <Image
+                source={require('../public/icons/cadre.png')}
+                style={styles.cadre}
+              />
+            </View>
+          }
           cameraContainerStyle={styles.camera}
+          cameraStyle={styles.cameraStyle}
           onRead={this.onSuccess}
+          fadeIn={true}
         />
       </View>
     );
@@ -54,31 +65,33 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   logo: {
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
     marginTop: 4,
-    marginLeft: '40%',
   },
   menu: {
     width: 40,
     height: 40,
     margin: 24,
   },
-  text: {
-    marginTop: 8,
-    fontSize: 22,
-    fontFamily: 'Inter',
-    color: '#223B5D',
-    fontStyle: 'normal',
-    fontWeight: '700',
-    lineHeight: 27,
-  },
+  back: {width: 30, height: 30, margin: 24},
   camera: {
-    display: 'flex',
     width: '100%',
+    height: '100%',
+  },
+  cameraStyle: {
+    width: '100%',
+    height: 666,
+  },
+  cadre: {
+    width: 294,
+    height: 312,
+    alignSelf: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
   },
 });
-
 export default QrScanner;
