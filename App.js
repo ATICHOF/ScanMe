@@ -1,8 +1,8 @@
 import React from 'react';
-import QrScanner from './containers/QrScanner';
+import Wifi2Qr from './containers/Wifi2Qr';
 
 const App = () => {
-  return <QrScanner />;
+  return <Wifi2Qr />;
 };
 
 export default App;
