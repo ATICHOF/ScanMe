@@ -1,8 +1,8 @@
 import React from 'react';
-import TextRegognizer from './containers/TextRecognizer';
+import Text2Qr from './containers/Text2Qr';
 
 const App = () => {
-  return <TextRegognizer />;
+  return <Text2Qr />;
 };
 
 export default App;

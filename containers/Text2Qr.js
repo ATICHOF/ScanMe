@@ -1,24 +1,29 @@
 /* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
 import {
-  SafeAreaView,
+  TextInput,
   ScrollView,
   StyleSheet,
   View,
   PermissionsAndroid,
   Platform,
   ToastAndroid,
+  Dimensions,
+  TouchableOpacity,
+  Image,
+  Text,
 } from 'react-native';
-import AppHeader from '../components/AppHeader';
 import QRCode from 'react-native-qrcode-svg';
 import {Picker} from '@react-native-picker/picker';
-import {Button, TextInput} from 'react-native-paper';
+import {Button} from 'react-native-paper';
 import RNFS from 'react-native-fs';
 import CameraRoll from '@react-native-community/cameraroll';
 const Text2Qr = () => {
   const [isHidden, setisHidden] = useState(false);
   const [textvalue, settextvalue] = useState('');
   const [size, setsize] = useState(100);
+  const [color, setcolor] = useState('#000');
+  const [bcolor, setbcolor] = useState('#FFF');
   const [svg, setsvg] = useState();
 
   async function hasAndroidPermission() {
@@ -53,20 +58,43 @@ const Text2Qr = () => {
   }
 
   return (
-    <ScrollView>
-      <AppHeader />
-      <SafeAreaView style={styles.container}>
+    <View>
+      <ScrollView style={styles.container}>
+        <View style={styles.header}>
+          <TouchableOpacity>
+            <Image
+              source={require('../public/icons/return2.png')}
+              style={styles.back}
+            />
+          </TouchableOpacity>
+          <Image
+            source={require('../public/logo/scan2.png')}
+            style={styles.logo}
+          />
+          <TouchableOpacity>
+            <Image
+              source={require('../public/icons/menu2.png')}
+              style={styles.menu}
+            />
+          </TouchableOpacity>
+        </View>
+        <Text style={styles.text1}>Generate QR Code</Text>
+        <Text style={styles.text2}>From your Text</Text>
+        <Text style={styles.input}>Input</Text>
         <TextInput
-          style={{margin: 16}}
+          multiline={true}
+          style={styles.TextInput}
           placeholder="Enter Your Text Here"
-          label="Input"
-          mode="outlined"
           onChangeText={val => {
             settextvalue(val);
             setisHidden(false);
           }}
         />
-        <Picker selectedValue={size} onValueChange={si => setsize(si)}>
+        <Text style={styles.input}>Choose size</Text>
+        <Picker
+          style={styles.Picker}
+          selectedValue={size}
+          onValueChange={si => setsize(si)}>
           <Picker.Item label="100" value={100} />
           <Picker.Item label="200" value={200} />
           <Picker.Item label="300" value={300} />
@@ -74,39 +102,159 @@ const Text2Qr = () => {
           <Picker.Item label="500" value={500} />
           <Picker.Item label="600" value={600} />
         </Picker>
+        <Text style={styles.input}>Choose color</Text>
+        <Picker
+          style={styles.Picker}
+          selectedValue={color}
+          onValueChange={col => setcolor(col)}>
+          <Picker.Item label="White" value={'#FFF'} />
+          <Picker.Item label="Silver" value={'#C0C0C0'} />
+          <Picker.Item label="Gray" value={'#808080'} />
+          <Picker.Item label="Black" value={'#000'} />
+          <Picker.Item label="Red" value={'#FF0000'} />
+          <Picker.Item label="Maroon" value={'#800000'} />
+          <Picker.Item label="Yellow" value={'#FFFF00'} />
+          <Picker.Item label="Olive" value={'#808000'} />
+          <Picker.Item label="Lime" value={'#00FF00'} />
+          <Picker.Item label="Green" value={'#008000'} />
+          <Picker.Item label="Aqua" value={'#00FFFF'} />
+          <Picker.Item label="Teal" value={'#008080'} />
+          <Picker.Item label="Blue" value={'#0000FF'} />
+          <Picker.Item label="Navy" value={'#000080'} />
+          <Picker.Item label="Fuchsia" value={'#FF00FF'} />
+          <Picker.Item label="Purple" value={'#800080'} />
+        </Picker>
+        <Text style={styles.input}>Choose background Color</Text>
+        <Picker
+          style={styles.Picker}
+          selectedValue={bcolor}
+          onValueChange={bcol => setbcolor(bcol)}>
+          <Picker.Item label="White" value={'#FFF'} />
+          <Picker.Item label="Silver" value={'#C0C0C0'} />
+          <Picker.Item label="Gray" value={'#808080'} />
+          <Picker.Item label="Black" value={'#000'} />
+          <Picker.Item label="Red" value={'#FF0000'} />
+          <Picker.Item label="Maroon" value={'#800000'} />
+          <Picker.Item label="Yellow" value={'#FFFF00'} />
+          <Picker.Item label="Olive" value={'#808000'} />
+          <Picker.Item label="Lime" value={'#00FF00'} />
+          <Picker.Item label="Green" value={'#008000'} />
+          <Picker.Item label="Aqua" value={'#00FFFF'} />
+          <Picker.Item label="Teal" value={'#008080'} />
+          <Picker.Item label="Blue" value={'#0000FF'} />
+          <Picker.Item label="Navy" value={'#000080'} />
+          <Picker.Item label="Fuchsia" value={'#FF00FF'} />
+          <Picker.Item label="Purple" value={'#800080'} />
+        </Picker>
         <Button style={styles.button} onPress={() => setisHidden(true)}>
           SUBMMIT
         </Button>
         {isHidden && textvalue !== '' ? (
           <View style={styles.qr}>
-            <QRCode value={textvalue} size={size} getRef={ref => setsvg(ref)} />
+            <QRCode
+              value={textvalue}
+              size={size}
+              getRef={ref => setsvg(ref)}
+              color={color}
+              backgroundColor={bcolor}
+            />
             <Button style={styles.button} onPress={e => saveQrToDisk()}>
               Download
             </Button>
           </View>
         ) : null}
-      </SafeAreaView>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flex: 1,
-    justifyContent: 'center',
-    alignContent: 'center',
+    height: Dimensions.get('window').height,
+    backgroundColor: '#F1F5F6',
+  },
+  header: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 64,
+    height: 64,
+    marginTop: 4,
+  },
+  menu: {
+    width: 40,
+    height: 40,
+    margin: 24,
+  },
+  back: {
+    width: 32,
+    height: 32,
+    margin: 24,
   },
   button: {
-    display: 'flex',
-    flex: 1,
     margin: 8,
+    backgroundColor: 'white',
+    height: 48,
+    width: 268,
+    alignSelf: 'center',
+    marginTop: 32,
+    marginBottom: 32,
+    justifyContent: 'center',
   },
   qr: {
-    display: 'flex',
     alignSelf: 'center',
     alignContent: 'center',
     justifyContent: 'center',
-    flex: 1,
+  },
+  input: {fontSize: 16, color: '#223B5D', fontWeight: '700', marginLeft: 22},
+  TextInput: {
+    margin: 16,
+    borderRadius: 8,
+    backgroundColor: '#DDDDDD',
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#223B5D',
+    padding: 12,
+    height: 160,
+  },
+  text1: {
+    fontSize: 24,
+    color: '#223B5D',
+    fontWeight: '700',
+    lineHeight: 29,
+    marginLeft: 32,
+    marginTop: 64,
+  },
+  text2: {
+    fontSize: 16,
+    color: '#223B5D',
+    fontWeight: '700',
+    lineHeight: 19,
+    marginLeft: 32,
+    marginBottom: 32,
+    marginTop: 8,
+  },
+  text3: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: 'white',
+    marginLeft: 26,
+    marginTop: 8,
+  },
+  text4: {
+    color: '#F1F5F6',
+    fontSize: 18,
+    fontWeight: '700',
+    fontFamily: 'Inter',
+    fontStyle: 'normal',
+  },
+  Picker: {
+    backgroundColor: '#DDDDDD',
+    margin: 16,
+    height: 64,
+    color: '#223B5D',
   },
 });
 

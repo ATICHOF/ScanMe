@@ -89,6 +89,8 @@ const styles = StyleSheet.create({
     height: '100%',
     display: 'flex',
   },
+  profile: {alignItems: 'center'},
+  text: {fontSize: 22, fontWeight: '700', color: '#223B5D'},
   top: {
     backgroundColor: '#F1F5F6',
     width: '100%',
