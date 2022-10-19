@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
 import {
   ScrollView,
@@ -17,7 +19,7 @@ import {Button, Checkbox, Text, TextInput} from 'react-native-paper';
 import RNFS from 'react-native-fs';
 import CameraRoll from '@react-native-community/cameraroll';
 import LinearGradient from 'react-native-linear-gradient';
-const Wifi2Qr = () => {
+const Wifi2Qr = ({navigation}) => {
   const [isHidden, setisHidden] = useState(false);
   const [ssid, setssid] = useState('');
   const [password, setpassword] = useState('');
@@ -65,7 +67,10 @@ const Wifi2Qr = () => {
         colors={['#223b5d', '#355887']}>
         <ScrollView style={styles.container}>
           <View style={styles.header}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.goBack();
+              }}>
               <Image
                 source={require('../public/icons/return3.png')}
                 style={styles.back}

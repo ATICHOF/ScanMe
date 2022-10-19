@@ -18,7 +18,7 @@ import {Picker} from '@react-native-picker/picker';
 import {Button} from 'react-native-paper';
 import RNFS from 'react-native-fs';
 import CameraRoll from '@react-native-community/cameraroll';
-const Text2Qr = () => {
+const Text2Qr = ({navigation}) => {
   const [isHidden, setisHidden] = useState(false);
   const [textvalue, settextvalue] = useState('');
   const [size, setsize] = useState(100);
@@ -61,7 +61,10 @@ const Text2Qr = () => {
     <View>
       <ScrollView style={styles.container}>
         <View style={styles.header}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.goBack();
+            }}>
             <Image
               source={require('../public/icons/return2.png')}
               style={styles.back}

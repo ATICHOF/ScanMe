@@ -16,7 +16,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import TextRecognition from 'react-native-text-recognition';
 import Svg, {Path} from 'react-native-svg';
 
-const TextRegognizer = () => {
+const TextRegognizer = ({navigation}) => {
   const [image, setimage] = useState(null);
   const [result, setresult] = useState('');
   const pickImage = useCallback(async () => {
@@ -36,7 +36,10 @@ const TextRegognizer = () => {
         colors={['#223b5d', '#355887']}>
         <View style={styles.container}>
           <View style={styles.header}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.goBack();
+              }}>
               <Image
                 source={require('../public/icons/return3.png')}
                 style={styles.back}

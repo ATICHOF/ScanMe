@@ -18,7 +18,10 @@ class QrScanner extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.goBack();
+            }}>
             <Image
               source={require('../public/icons/return2.png')}
               style={styles.back}

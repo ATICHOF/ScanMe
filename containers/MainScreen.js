@@ -3,7 +3,7 @@ import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 
-const MainScreen = () => {
+const MainScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.top}>
@@ -45,14 +45,22 @@ const MainScreen = () => {
         </Text>
         <View style={styles.option}>
           <View style={styles.row1}>
-            <TouchableOpacity style={styles.qr}>
+            <TouchableOpacity
+              style={styles.qr}
+              onPress={() => {
+                navigation.navigate('Qr');
+              }}>
               <Image
                 style={styles.img}
                 source={require('../public/menuicons/qr1.png')}
               />
               <Text style={styles.txt}>SCAN QR</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.qr}>
+            <TouchableOpacity
+              style={styles.qr}
+              onPress={() => {
+                navigation.navigate('Wifi');
+              }}>
               <Image
                 style={styles.img}
                 source={require('../public/menuicons/wifi2.png')}
@@ -61,14 +69,22 @@ const MainScreen = () => {
             </TouchableOpacity>
           </View>
           <View style={styles.row2}>
-            <TouchableOpacity style={styles.qr}>
+            <TouchableOpacity
+              style={styles.qr}
+              onPress={() => {
+                navigation.navigate('Text');
+              }}>
               <Image
                 style={styles.img}
                 source={require('../public/menuicons/text3.png')}
               />
               <Text style={styles.txt}>TEXT ⇄ QR</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.qr}>
+            <TouchableOpacity
+              style={styles.qr}
+              onPress={() => {
+                navigation.navigate('TextR');
+              }}>
               <Image
                 style={styles.img}
                 source={require('../public/menuicons/img1.png')}
