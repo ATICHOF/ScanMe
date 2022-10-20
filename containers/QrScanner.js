@@ -9,9 +9,25 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 
 class QrScanner extends Component {
   onSuccess = e => {
-    Linking.openURL(e.data).catch(err =>
-      console.error('An error occured', err),
-    );
+    if (
+      e.data.match(
+        /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi,
+      )
+    ) {
+      Linking.openURL(e.data).catch(err =>
+        console.error('An error occured', err),
+      );
+    } else if (
+      e.data.match(
+        /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi,
+      )
+    ) {
+      //raise a modal to alert that the link is not secured
+    } else if (e.data.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+      //raise a modal to open email
+    } else {
+      // raise a modal to show data in qrcode
+    }
   };
 
   render() {

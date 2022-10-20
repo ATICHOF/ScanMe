@@ -12,7 +12,10 @@ const MainScreen = ({navigation}) => {
             source={require('../public/logo/scan2.png')}
             style={styles.logo}
           />
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Drawer');
+            }}>
             <Image
               source={require('../public/icons/menu2.png')}
               style={styles.menu}

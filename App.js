@@ -5,6 +5,7 @@ import MainScreen from './containers/MainScreen';
 import TextRegognizer from './containers/TextRecognizer';
 import Wifi2Qr from './containers/Wifi2Qr';
 import QrScanner from './containers/QrScanner';
+import Draw from './components/Draw';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Stack.Screen name="TextR" component={TextRegognizer} />
       <Stack.Screen name="Wifi" component={Wifi2Qr} />
       <Stack.Screen name="Qr" component={QrScanner} />
+      <Stack.Screen name="Drawer" component={Draw} />
     </Stack.Navigator>
   );
 };

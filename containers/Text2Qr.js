@@ -149,7 +149,21 @@ const Text2Qr = ({navigation}) => {
           <Picker.Item label="Fuchsia" value={'#FF00FF'} />
           <Picker.Item label="Purple" value={'#800080'} />
         </Picker>
-        <Button style={styles.button} onPress={() => setisHidden(true)}>
+        <Button
+          style={styles.button}
+          theme={{
+            colors: {
+              primary: 'white',
+            },
+            fonts: {
+              medium: {
+                fontWeight: '700',
+                fontSize: 16,
+                letterSpacing: 1.6,
+              },
+            },
+          }}
+          onPress={() => setisHidden(true)}>
           SUBMMIT
         </Button>
         {isHidden && textvalue !== '' ? (
@@ -161,7 +175,21 @@ const Text2Qr = ({navigation}) => {
               color={color}
               backgroundColor={bcolor}
             />
-            <Button style={styles.button} onPress={e => saveQrToDisk()}>
+            <Button
+              style={styles.button}
+              theme={{
+                colors: {
+                  primary: 'white',
+                },
+                fonts: {
+                  medium: {
+                    fontWeight: '700',
+                    fontSize: 16,
+                    letterSpacing: 1.6,
+                  },
+                },
+              }}
+              onPress={e => saveQrToDisk()}>
               Download
             </Button>
           </View>
@@ -198,7 +226,8 @@ const styles = StyleSheet.create({
   },
   button: {
     margin: 8,
-    backgroundColor: 'white',
+    backgroundColor: '#223B5D',
+
     height: 48,
     width: 268,
     alignSelf: 'center',
@@ -208,6 +237,7 @@ const styles = StyleSheet.create({
   },
   qr: {
     alignSelf: 'center',
+    alignItems: 'center',
     alignContent: 'center',
     justifyContent: 'center',
   },

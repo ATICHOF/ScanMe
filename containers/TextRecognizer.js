@@ -69,7 +69,9 @@ const TextRegognizer = ({navigation}) => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              analyse();
+              if (image) {
+                analyse();
+              }
             }}
             style={styles.button}>
             <Text style={styles.text3}>Analyse</Text>
