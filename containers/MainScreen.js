@@ -14,7 +14,7 @@ const MainScreen = ({navigation}) => {
           />
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Drawer');
+              navigation.openDrawer();
             }}>
             <Image
               source={require('../public/icons/menu2.png')}

@@ -15,6 +15,7 @@ import {launchImageLibrary} from 'react-native-image-picker';
 import LinearGradient from 'react-native-linear-gradient';
 import TextRecognition from 'react-native-text-recognition';
 import Svg, {Path} from 'react-native-svg';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const TextRegognizer = ({navigation}) => {
   const [image, setimage] = useState(null);
@@ -29,7 +30,7 @@ const TextRegognizer = ({navigation}) => {
     }
   }, [image]);
   return (
-    <View>
+    <ScrollView>
       <LinearGradient
         useAngle={true}
         angle={168}
@@ -49,7 +50,10 @@ const TextRegognizer = ({navigation}) => {
               source={require('../public/logo/scan.png')}
               style={styles.logo}
             />
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.openDrawer();
+              }}>
               <Image
                 source={require('../public/icons/menu3.png')}
                 style={styles.menu}
@@ -119,7 +123,7 @@ const TextRegognizer = ({navigation}) => {
           </View>
         </View>
       </LinearGradient>
-    </View>
+    </ScrollView>
   );
 };
 

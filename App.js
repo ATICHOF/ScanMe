@@ -1,27 +1,26 @@
 import React from 'react';
 import Text2Qr from './containers/Text2Qr';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MainScreen from './containers/MainScreen';
 import TextRegognizer from './containers/TextRecognizer';
 import Wifi2Qr from './containers/Wifi2Qr';
 import QrScanner from './containers/QrScanner';
-import Draw from './components/Draw';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
 const App = () => {
   return (
-    <Stack.Navigator
+    <Drawer.Navigator
       initialRouteName="Home"
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="Home" component={MainScreen} />
-      <Stack.Screen name="Text" component={Text2Qr} />
-      <Stack.Screen name="TextR" component={TextRegognizer} />
-      <Stack.Screen name="Wifi" component={Wifi2Qr} />
-      <Stack.Screen name="Qr" component={QrScanner} />
-      <Stack.Screen name="Drawer" component={Draw} />
-    </Stack.Navigator>
+      <Drawer.Screen name="Home" component={MainScreen} />
+      <Drawer.Screen name="Text" component={Text2Qr} />
+      <Drawer.Screen name="TextR" component={TextRegognizer} />
+      <Drawer.Screen name="Wifi" component={Wifi2Qr} />
+      <Drawer.Screen name="Qr" component={QrScanner} />
+    </Drawer.Navigator>
   );
 };
 

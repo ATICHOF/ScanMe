@@ -80,7 +80,10 @@ const Wifi2Qr = ({navigation}) => {
               source={require('../public/logo/scan.png')}
               style={styles.logo}
             />
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.openDrawer();
+              }}>
               <Image
                 source={require('../public/icons/menu3.png')}
                 style={styles.menu}
