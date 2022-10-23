@@ -51,7 +51,7 @@ const MainScreen = ({navigation}) => {
             <TouchableOpacity
               style={styles.qr}
               onPress={() => {
-                navigation.navigate('Qr');
+                navigation.navigate('QrScanner');
               }}>
               <Image
                 style={styles.img}
@@ -62,7 +62,7 @@ const MainScreen = ({navigation}) => {
             <TouchableOpacity
               style={styles.qr}
               onPress={() => {
-                navigation.navigate('Wifi');
+                navigation.navigate('Wifi ⇄ Qr');
               }}>
               <Image
                 style={styles.img}
@@ -75,7 +75,7 @@ const MainScreen = ({navigation}) => {
             <TouchableOpacity
               style={styles.qr}
               onPress={() => {
-                navigation.navigate('Text');
+                navigation.navigate('Text ⇄ Qr');
               }}>
               <Image
                 style={styles.img}
@@ -86,7 +86,7 @@ const MainScreen = ({navigation}) => {
             <TouchableOpacity
               style={styles.qr}
               onPress={() => {
-                navigation.navigate('TextR');
+                navigation.navigate('Text Regognizer');
               }}>
               <Image
                 style={styles.img}

@@ -2,16 +2,16 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const Draw = () => {
+const About = () => {
   return (
-    <View style={styles.Draw}>
+    <View style={styles.About}>
       <Text />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  Draw: {width: '75%'},
+  About: {width: '75%'},
 });
 
-export default Draw;
+export default About;
