@@ -1,89 +1,116 @@
-<!-- Title -->
-<h1 align="center">
- ScanMe : React Native Application
-</h1>
+# ScanMe Mobile Application README
 
-<!-- Header -->
+![ScanMe Logo](https://github.com/ATICHOF/ScanMe-design-prototype/blob/3151ff001047af341f4bd81290f4342c39b85920/logo/logo6%20primary.png)
 
-<p align="center">
-  <b>Create React Native apps with no build configuration.</b>
-  <br />
+Welcome to the README file for ScanMe, a personal project Mobile Application developed using React Native. ScanMe is designed to simplify various tasks related to QR codes, including scanning QR codes, converting text to QR codes, extracting text from images, and generating WiFi QR codes for easy network sharing.
 
-  <p align="center">
-    <!-- iOS -->
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-    <!-- Android -->
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-    <!-- Web -->
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </p>
-</p>
+## Table of Contents
 
-<!-- Body -->
+- [Introduction](#introduction)
+- [Features](#features)
+- - [Scan QR Codes](#scan-qr-codes)
+  - [Text to QR Code](#text-to-qr-code)
+  - [Image to Text](#image-to-text)
+  - [WiFi QR Code](#wifi-qr-code)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-```sh
-npx create-react-native-app
-```
+## Introduction
 
-Once you're up and running with Create React Native App, visit [this tutorial](https://reactnative.dev/docs/tutorial.html) for more information on building apps with React Native.
+ScanMe is a versatile mobile application built with React Native that aims to provide a user-friendly interface for working with QR codes. Whether you need to scan QR codes, create QR codes from text, extract text from images, or generate WiFi QR codes, ScanMe has you covered. With its intuitive design and straightforward functionality, ScanMe is a valuable tool for various scenarios.
 
 ## Features
 
-- Native project ready to be built on to your device.
-- Support for unimodules and auto-linking.
-- OTA updates, and Gestures out of the box.
-- Full support for React Native web.
-- TypeScript by default.
-- Works with the Expo Client app.
+### Scan QR Codes
+
+Easily scan QR codes using the device's camera and quickly access the embedded information. This feature is useful for reading QR codes containing URLs, contact information, product details, and more.
+
+### Text to QR Code
+
+Convert any text or string into a QR code. This can be handy for sharing long strings of text, URLs, or any information that can be conveniently stored within a QR code.
+
+### Image to Text
+
+Extract text from images using optical character recognition (OCR) technology. Simply take a picture of the text, and ScanMe will convert it into editable and shareable text.
+
+### WiFi QR Code
+
+Generate WiFi QR codes to simplify the process of sharing WiFi network credentials. Users can scan the generated QR code to automatically connect to the specified WiFi network, eliminating the need for manual entry of credentials.
+
+## Installation
+
+Follow these steps to install and run ScanMe on your local machine:
+
+1. Clone the repository: `git clone https://github.com/ATICHOF/scanme.git`
+2. Navigate to the project directory: `cd scanme`
+3. Install dependencies: `npm install` or `yarn install`
+4. Start the development server: `npm start` or `yarn start`
+5. Use a mobile emulator or scan the QR code with the Expo Go app to launch the application on your device.
 
 ## Usage
 
-- `npx create-react-native-app` Create a new React Native app.
-- `yarn ios` -- (`react-native run-ios`) Build the iOS App (requires a MacOS computer).
-- `yarn android` -- (`react-native run-android`) Build the Android App.
-- `yarn web` -- (`expo start:web`) Run the website in your browser.
+Once ScanMe is up and running, you can explore its features through the user-friendly interface. Here's a brief overview of how to use each feature:
 
-## Sections
+- **Scan QR Codes:** Open the app and point your device's camera at a QR code. The app will automatically detect and interpret the QR code's content.
 
-- [Usage with Expo Client App](#usage-with-expo-client-app)
-- [Support and Contact](#support-and-contact)
-- [FAQs](#faqs)
-- [Contributing](#contributing)
+- **Text to QR Code:** Enter the desired text in the provided input field. The app will generate a QR code representing the input text.
 
-## Usage with Expo Client App
+- **Image to Text:** Select the "Image to Text" feature, then choose an image containing text from your device's gallery. The app will process the image and display the extracted text.
 
-Expo Client enables you to work with all of the [Components and APIs](https://facebook.github.io/react-native/docs/getting-started.html) in React Native, as well as the [JavaScript APIs](https://docs.expo.io/versions/latest/sdk/index.html) that the are bundled with the Expo App.
+- **WiFi QR Code:** Select the "WiFi QR Code" feature and enter your WiFi network's credentials. The app will generate a QR code that, when scanned, allows users to connect to the WiFi network easily.
 
-Expo Client supports running any project that doesn't have custom native modules added.
+## Screenshots
+## Screenshots
 
-- Download the "Expo Client" app from the Play Store or App Store.
-- Start your project with Expo
-  - Install the CLI `npm i -g expo-cli`
-  - Start the project `expo start`
-- Open the project:
-  - Sign in to expo and the project will appear in the app.
-  - Or point your phone's camera at the QR code in the terminal (press "c" to view it).
+Here are some screenshots of the ScanMe application:
 
-## Support and Contact
+### Get Started
+![Get Started](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/Get%20started.png)
 
-If you're having issues with Create React Native App, please make sure:
+### Get Started - Dark Theme
+![Get Started - Dark Theme](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/get%20started%20dark.png)
 
-- The issue is not covered in the [Expo Docs](https://docs.expo.io/versions/latest/)
-- There is not already an [open issue](https://github.com/expo/expo-cli/issues) for your particular problem
+### Login - Dark Theme
+![Login - Dark Theme](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/Login%20dark.png)
 
-If you've checked the documentation and currently open issues, please either [open a new GitHub issue](https://github.com/expo/create-react-native-app/issues/new) or ask a question on [Expo forums](https://forums.expo.io/c/help).
+### Login - Light Theme
+![Login - Light Theme](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/Login%20light.png)
+
+### Sign Up - Light Theme
+![Sign Up - Light Theme](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/Sign%20Up%20light.png)
+
+### Sign Up - Dark Theme
+![Sign Up - Dark Theme](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/Sign%20up%20dark.png)
+
+### Main Screen - Light Theme
+![Main Screen - Light Theme](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/main%20screen%20light.png)
+
+### Main Screen
+![Main Screen](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/main%20screen.png)
+
+### Scanning Screen
+![Scanning Screen](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/scanning%20screen.png)
+
+### Text Detector
+![Text Detector](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/Text%20detector.png)
+
+### Text
+![Text](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/Text.png)
+
+### WiFi
+![WiFi](https://github.com/ATICHOF/ScanMe-design-prototype/raw/3151ff001047af341f4bd81290f4342c39b85920/main%20application%20ui/Wifi.png)
 
 ## Contributing
 
-Please see [Contributing guide](https://github.com/expo/expo-cli/blob/master/CONTRIBUTING.md) in the Expo CLI monorepo for instructions on contributing to Expo CLI.
+Contributions to ScanMe are welcome! If you find a bug or have suggestions for improvements, please open an issue in the repository. If you'd like to contribute directly, feel free to fork the repository and submit a pull request.
 
-<!-- Footer -->
+## License
+
+ScanMe is released under the [MIT License](LICENSE), which means you can use, modify, and distribute the codebase as long as you include the original copyright notice and disclaimers. Make sure to review the complete license terms in the `LICENSE` file.
 
 ---
 
-<p>
-    <a aria-label="sponsored by expo" href="http://expo.io">
-        <img src="https://img.shields.io/badge/Sponsored_by-Expo-4630EB.svg?style=for-the-badge&logo=EXPO&labelColor=000&logoColor=fff" target="_blank" />
-    </a>
-    
-</p>
+Thank you for your interest in ScanMe! If you have any questions, feedback, or need further assistance, please don't hesitate to contact me at sof.atiche@gmail.com.
