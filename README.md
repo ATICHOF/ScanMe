@@ -1,8 +1,8 @@
-# ScanMe Mobile Application README
+# ScanMe
 
 ![ScanMe Logo](https://github.com/ATICHOF/ScanMe-design-prototype/blob/3151ff001047af341f4bd81290f4342c39b85920/logo/logo6%20primary.png)
 
-Welcome to the README file for ScanMe, a personal project Mobile Application developed using React Native. ScanMe is designed to simplify various tasks related to QR codes, including scanning QR codes, converting text to QR codes, extracting text from images, and generating WiFi QR codes for easy network sharing.
+ScanMe is a personal project Mobile Application developed using React Native. ScanMe is designed to simplify various tasks related to QR codes, including scanning QR codes, converting text to QR codes, extracting text from images, and generating WiFi QR codes for easy network sharing.
 
 ## Table of Contents
 
@@ -62,7 +62,6 @@ Once ScanMe is up and running, you can explore its features through the user-fri
 
 - **WiFi QR Code:** Select the "WiFi QR Code" feature and enter your WiFi network's credentials. The app will generate a QR code that, when scanned, allows users to connect to the WiFi network easily.
 
-## Screenshots
 ## Screenshots
 
 Here are some screenshots of the ScanMe application:
